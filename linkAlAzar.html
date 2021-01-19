@@ -1,0 +1,19 @@
+<html>
+
+<head>
+    <title>Enlace Aleatorio</title>
+    <script>
+        var direcciones = new Array("https://github.com/javieraizq88", "https://www.linkedin.com/in/javiera-izquierdo-martino-b9173697/", "https://my-portfolio.javieraizq88.vercel.app/", "https://proyecto.javieraizq88.vercel.app/", "https://buscador-peliculas-react.vercel.app/", "https://star-wars.javieraizq88.vercel.app/", "https://jim-template-1.vercel.app/index.html", "https://battleship-final.vercel.app/", "https://tic-tac-toe-gold.vercel.app/", "https://random-card-dealer-generator.vercel.app/")
+        function enlaceAleatorio() {
+            aleat = Math.random() * direcciones.length
+            aleat = Math.floor(aleat)
+            window.location = direcciones[aleat]
+        }
+    </script>
+</head>
+
+<body>
+    <a href="javascript:enlaceAleatorio()">Enlace Aleatorio</a>
+</body>
+
+</html>

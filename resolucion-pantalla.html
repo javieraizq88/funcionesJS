@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <script>
+      alert("La resolución de tu pantalla es: " + screen.width + " x " + screen.height) 
+   </script>
+</head>
+
+<body>
+   <p>
+      Tu pantalla la consideramos:
+
+      <script>
+         if (screen.width < 1024)
+            document.write("Pequeña")
+         else
+            if (screen.width < 1280)
+               document.write("Mediana")
+            else
+               document.write("Grande") 
+      </script>
+   </p>
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+      function cambiar_color_over(celda){
+   celda.style.backgroundColor="#66ff33"
+}
+function cambiar_color_out(celda){
+   celda.style.backgroundColor="#dddddd"
+}
+celda = document.getElementById("celda1")
+celda.style.backgroundColor="#dddddd"
+
+function cambia_color(){
+   celda = document.getElementById("celda" + document.fcolor.celda.value)
+   celda.style.backgroundColor=document.fcolor.micolor.value
+}
+    </script>
+</head>
+<body>
+    <table width=100>
+        <tr>
+           <td bgcolor="#dddddd" id="celda1" onmouseover="cambiar_color_over(this)" onmouseout="cambiar_color_out(this)">Casilla numero 1</td>
+        </tr>
+        <tr>
+           <td bgcolor="#dddddd" id="celda2" onmouseover="cambiar_color_over(this)" onmouseout="cambiar_color_out(this)">Casilla numero 2</td>
+        </tr>
+        
+        <tr>
+           <td bgcolor="#dddddd" id="celda10" onmouseover="cambiar_color_over(this)" onmouseout="cambiar_color_out(this)">Casilla numero 10</td>
+        </tr>
+        </table>
+        <form name=fcolor>
+            Numero de celda: <input type=text name=celda size=3>
+            <br>
+            Color: <input type=text name=micolor size=8>
+            <br>
+            <input type=button value="Cambiar color" onclick="cambia_color()">
+            </form>
+</body>
+</html>

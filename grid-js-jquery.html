@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Comentarios</title>
+    <link rel="stylesheet" type="text/css" href="styles/kendo.common.min.css">
+<link rel="stylesheet" type="text/css" href="styles/kendo.default.min.css">
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/kendo.web.min.js"></script>
+<script>
+    $("#grid").kendoGrid();
+
+    $("#grid").kendoGrid({
+    groupable: true,
+    scrollable: true,
+    sortable: true
+});
+
+function dameArray(){
+   return [
+   {
+      nombre: "miguel",
+      edad: 37
+   },
+   {
+      nombre: "Juan",
+      edad: 27
+   },
+   {
+      nombre: "Lola",
+      edad: 52
+   },
+   {
+      nombre: "Luis",
+      edad: 18
+   }
+   ];
+}
+
+
+$("#otro").kendoGrid({
+   sortable: true,
+   pageable: {
+      pageSizes: 5
+   },
+   dataSource:{
+      data: dameArray(),
+      schema: {
+         model: {
+            fields:{
+               nombre: {type: "string"},
+               edad: {type: "number"}
+            }
+         }
+      },
+      pageSize: 5
+   },
+   columns: [
+      {
+         field: "nombre",
+         title: "Nombre Cliente",
+         width: "200px"
+      },
+      {
+         field: "edad",
+         title: "Edad",
+         width: "40px"
+      }
+   ]
+});
+
+
+</script>
+
+
+<body>
+    <table id="grid">
+        <thead>
+        <tr>
+           <th data-field="nombre">Nombre</th>
+           <th data-field="distancia">Distancia del sol (1000 Km)</th>
+           <th data-field="superficie">Superficie (1000 Km2)</th>
+           <th data-field="satelites">Satélites</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+           <td>La tierra</td>
+           <td>1200</td>
+           <td>54</td>
+           <td>1</td>
+        </tr>
+        <tr>
+           <td>Mercurio</td>
+           <td>560</td>
+           <td>28</td>
+           <td>0</td>
+        </tr>
+        <tr>
+           <td>Venus</td>
+           <td>889</td>
+           <td>49</td>
+           <td>2</td>
+        </tr>
+        <tr>
+           <td>Júpiter</td>
+           <td>8002</td>
+           <td>509</td>
+           <td>4</td>
+        </tr>
+     </tbody>
+     </table>
+     
+     <div id="otro"></div>
+
+
+</body>
+
+</html>
+
+<!-- Indicaciones y tutorial para el uso del componente Grid de KendoUI, que implementa un Data Grid basado en jQuery que resulta muy potente y estéticamente atractivo.
+
+ 
+Las librerías para la creación de interfaces de usuario KendoUI, basadas en el framework Javascript jQuery tienen diversos componentes bastante atractivos y útiles. En este artículo vamos a examinar y explicar el uso de uno de ellos, llamado "kendoGrid", que implementa lo que se conoce como "Data Grid" o rejilla de datos.
+El componente es muy potente y nos daremos cuenta de ello a poco que exploremos la documentación. Ahora pretendo dar unas guías sobre las posibilidades de este componente y cómo debemos configurarlo, que nos pueden dar una base sobre la que podremos más tarde seguir explorando el data grid.
+
+
+Qué es KendoUI
+Por si hay algún despistado por ahí, os comentamos que KendoUI es una serie de librerías para la creación de interfaces de usuario basadas en jQuery. Tienen varios productos que se ofrecen en distintas versiones de distribución y licencias, pero en concreto los componentes web se pueden encontrar con licencia de libre distribución, no así diversos otros componentes que se ofrecen bajo pago.
+Si accedes a la página de descarga verás que la "KendoUI Web" -donde se engloba el KendoGrid- se ofrece como Open Source, con licencia GPL. Por tanto, este data grid que te presentamos podrías usarlo de manera gratuita. Sin embargo, se ofrece sin derecho a soporte técnico.
+
+Hace tiempo presentamos en DesarrolloWeb.com un artículo con una introducción más larga a KendoUI.
+
+Dos modos de usar el Grid de KendoUI
+La documentación de KendoUI comienza explicando que puedes generar un grid de dos maneras distintas, una es a través de una tabla ya presente en tu código HTML y otra es a través de una división DIV vacía. Ambas maneras las veremos a continuación.
+Aunque los dos modos funcionarán correctamente, es obvio que con la opción del DIV vacío es mucho más versátil, puesto que podremos configurar el grid sin necesidad de componer un código HTML nosotros mismos, e incluso podremos utilizar distintos orígenes de datos para la rejilla, como un array o una URL remota.
+
+Nota: En la documentación explican estos dos modos, aunque sea dicho de paso y en mi opinión, entre las virtudes de KendoUI no se encuentra precisamente una magnífica claridad y detalle en los textos que hay para entender sus componentes. Quizás sea simplemente una impresión, debido a mi falta de experiencia con KendoUI o este componente en concreto que es bastante complejo.
+Crear una rejilla de datos a través de una tabla HTML
+Lo más sencillo es crear el grid a través de una tabla HTML existente, aunque como decía, no es lo más potente. El único detalle es que, para asegurarnos que la rejilla se muestra bien y se utilizan correctamente los encabezamientos de las tablas, etc., la tabla debe estar construida con unos determinados elementos.
+Necesitamos una estructura donde se encuentren etiquetas como THEAD, TH, TBODY e incluso algún atributo HTML5 especial. Veamos el siguiente formato:
+
+<table id="grid">
+   <thead>
+   <tr>
+      <th data-field="nombre">Nombre</th>
+      <th data-field="distancia">Distancia del sol (1000 Km)</th>
+      <th data-field="superficie">Superficie (1000 Km2)</th>
+      <th data-field="satelites">Satélites</th>
+   </tr>
+   </thead>
+   <tbody>
+   <tr>
+      <td>La tierra</td>
+      <td>1200</td>
+      <td>54</td>
+      <td>1</td>
+   </tr>
+   <tr>
+      <td>Mercurio</td>
+      <td>560</td>
+      <td>28</td>
+      <td>0</td>
+   </tr>
+   <tr>
+      <td>Venus</td>
+      <td>889</td>
+      <td>49</td>
+      <td>2</td>
+   </tr>
+   <tr>
+      <td>Júpiter</td>
+      <td>8002</td>
+      <td>509</td>
+      <td>4</td>
+   </tr>
+</tbody>
+</table> -->
+<!-- 
+Además, la tabla tiene un identificador para que luego podamos invocar a KendoUI.
+
+$("#grid").kendoGrid();
+
+Nota: Sobra decir que para que esta llamada funcione, tienes que haber incluído las librerías Javascript jQuery y KendoUI, aparte de los estilos CSS comunes de KendoUI y los estilos específicos del tema CSS que hayamos elegido.
+<link rel="stylesheet" type="text/css" href="styles/kendo.common.min.css">
+<link rel="stylesheet" type="text/css" href="styles/kendo.default.min.css">
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/kendo.web.min.js"></script>
+
+Fíjate en otro detalle y es que yo he incluído todo el KendoUI.web (que ocupa realmente mucho en peso Kb). Si solamente deseas usar el KendoGrid, podrías incluir el js con el código de este plugin.
+
+Puedes configurar el grid pasando el típico objeto de opciones que estás acostumbrado a usar en jQuery.
+
+$("#grid").kendoGrid({
+    groupable: true,
+    scrollable: true,
+    sortable: true
+});
+
+Así le indicamos que se puedan agrupar sus campos, que se puede hacer scroll para ver los datos que no quepan en las dimensiones del grid (aunque en este caso no he asignado dimensiones, por lo que el componente se adaptará a donde esté colocado), y he indicado que los campos se puedan ordenar.
+
+Crear el grid a través de una división DIV vacía
+Ahora veamos que también podemos generar todo el grid por medio de Javascript sobre un contenedor dado. Es más versátil porque lo puedes configurar todo en tiempo de ejecución y porque puedes usar otros orígenes de datos diferentes al propio código HTML.
+Colocamos una división vacía, con su identificador:
+
+<div id="otro"></div>
+
+Ese código HTML sería suficiente, ahora veamos el código Javascript. Primero debemos definir un origen de datos. Podríamos usar una función que devuelve un array:
+
+function dameArray(){
+   return [
+   {
+      nombre: "miguel",
+      edad: 37
+   },
+   {
+      nombre: "Juan",
+      edad: 27
+   },
+   {
+      nombre: "Lola",
+      edad: 52
+   },
+   {
+      nombre: "Luis",
+      edad: 18
+   }
+   ];
+}
+
+Nota: Lógicamente, esta función tendría que hacer lo que deseases para obtener los datos, como consultar una página por Ajax.
+En este caso, construir el grid a partir de Javascript con un origen de datos diferente del propio HTML, el código Javascript para invocar a KendoGrid se hace bastante más complejo.
+
+$("#otro").kendoGrid({
+   sortable: true,
+   pageable: {
+      pageSizes: 5
+   },
+   dataSource:{
+      data: dameArray(),
+      schema: {
+         model: {
+            fields:{
+               nombre: {type: "string"},
+               edad: {type: "number"}
+            }
+         }
+      },
+      pageSize: 5
+   },
+   columns: [
+      {
+         field: "nombre",
+         title: "Nombre Cliente",
+         width: "200px"
+      },
+      {
+         field: "edad",
+         title: "Edad",
+         width: "40px"
+      }
+   ]
+});
+
+Con "sortable" indicamos que queremos que se puedan ordenar los elementos. El valor "pageable" nos permite decir si deseamos que se puedan paginar y además nos permite asignar valores como el tamaño de la página. Luego encontramos dataSource que nos facilita indicar el origen de datos donde está la información que estamos paginando. En este caso es una llamada a la función vista anteriormente, que además devolvía un array. Fíjémonos además que podemos indicar datos como el schema de los datos, para indicar sus tipos o de nuevo el tamaño de la página.
+
+Por último encontramos el valor columns que nos permite indicar con un array las columnas del datagrid, lo que nos permitirá editar el nombre de los encabezados de la tabla o sus dimensiones.
+
+Conclusión
+Si quieres cambiar el texto de los mensajes que aparecen en el grid, puedes comenzar por esta referencia.
+Obviamente, hay mucho más detrás de este sistema para hacer un grid de datos. Os dejo un par de vídeos que está bien revisar para profundizar un poco más. El primero de ellos es un hangout que emitimos en DesarrolloWeb.com donde hablamos de KendoUI y en concreto vimos un ejemplo de grid. El otro recurso es un vídeo más cortito, pero muy ilustrador, de las posibilidades de la rejilla, realizado por el propio equipo de KendoUI, aunque en inglés. -->

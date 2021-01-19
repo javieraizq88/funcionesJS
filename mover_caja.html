@@ -1,0 +1,24 @@
+<html>
+
+<head>
+    <title>Untitled</title>
+    <script language="Javascript">
+        function bajar(nombreCapa) {
+            valor = document.getElementById(nombreCapa).style.top;
+            numero = parseInt(valor);
+            numero += 5;
+            document.getElementById(nombreCapa).style.top = numero;
+        }
+    </script>
+</head>
+
+<body>
+    <div id="capa1" style="position:absolute;width:100;height:100;top:100;bottom:100;left:100;background-color:blue">
+        Capa 1</div>
+    <form name="baja" action="#">
+        <input type="button" onclick="bajar('capa1')" value="bajar Capa">
+    </form>
+
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<html>
+
+<head>
+    <title>Navegador con capas</title>
+
+    <script language="javascript">
+        function texto_aleatorio() {
+            var textos = new Array()
+            textos[0] = "Tenemos los mejores productos del mercado, con controles de    calidad intensivos."
+            textos[1] = "Distribuimos en todo el mundo con los mejores tiempos de    entrega y fiabilidad de los envíos."
+            textos[2] = "No tenemos competidores que nos hagan sombra. Contrate con    nosotros y compuébelo. Así de fácil."
+            textos[3] = "Disponga del mejor servicio de atención al cliente y una    respuesta rápida a sus problemas."
+            textos[4] = "Los mejores servicios, productos y, como no, los menores    precios. Todo son ventajas."
+
+            aleat = Math.random() * (textos.length)
+            aleat = Math.floor(aleat)
+
+            document.write(textos[aleat])
+        }
+    </script>
+</head>
+
+<body>
+
+    <table width="180" border="0" cellspacing="1" cellpadding="2" bgcolor="000000">
+        <tr>
+            <td class="barraa" bgcolor="993333">
+                <font color="#FFFFFF"><b>Nuestras ventajas</b></font>
+            </td>
+        </tr>
+        <tr>
+            <td class="fuente8" bgcolor="#FFFFFF">
+                <script language=javascript>texto_aleatorio()</script>
+            </td>
+        </tr>
+    </table>
+
+</body>
+
+</html>

@@ -1,0 +1,132 @@
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="/JSCal2/css/jscal2.css" />
+    <link rel="stylesheet" type="text/css" href="/JSCal2/css/border-radius.css" />
+    <link rel="stylesheet" type="text/css" href="/JSCal2/css/gold/gold.css" />
+    <script type="text/javascript" src="/JSCal2/js/jscal2.js"></script>
+    <script type="text/javascript" src="/JSCal2/js/lang/en.js"></script>
+    <script LANGUAGE="JavaScript">
+
+        var sumafa = 0
+
+        var sumaaci = 0
+
+        var res = 0
+
+        var nota = 0
+
+        function resbien(sumafa2) {
+            sumaaci = sumaaci + 1;
+            return true
+        }
+
+        function resmal(sumafa2) {
+            sumafa = sumafa + 1;
+            return true
+        }
+
+        function averiguarNota(nota2) {
+            res = sumaaci + sumafa
+            res = res / 10
+            nota = sumaaci / res
+            if (res <= 0) {
+                alert("Puedes empezar este ejercicio. ¡Suerte!")
+            }
+            else
+                if (nota >= 10) {
+                    alert("Has tenido " + sumaaci + " aciertos y " + sumafa + " errores. Muy Bien. Magnífico")
+                }
+                else
+                    if (nota > 7) {
+                        alert("Has tenido " + sumaaci + " aciertos y " + sumafa + " errores. Bien, pero puedes mejorar.")
+                    }
+                    else {
+                        alert("Has tenido " + sumaaci + " aciertos y " + sumafa + " errores. Debes repetir el ejercicio.")
+                    }
+            sumaaci = 0
+            sumafa = 0
+        }
+
+    </script>
+</head>
+
+<body>
+
+    <h1 align="center"><input Type="Button" Value="Ayuda"
+            onclick="alert('abrir, advertir, afirmativo, amable, cueva, \n \nsubir, obstruir, atrever, avión, bandido.')">
+    </h1>
+    <form NAME="bv">
+        <div align="center">
+            <center>
+                <table border="8" width="346" cellspacing="1" cellpadding="1">
+                    <tr>
+                        <td width="182" bgcolor="#FFFFFF">
+                            <div align="center">
+                                <center>
+                                    <p><small>
+                                            <font face="Verdana" color="#FF0000"><b>a_rir</b></font>
+                                        </small>
+                        </td>
+                        <td width="152" align="center" bgcolor="#FFFFFF"><b>
+                                <div align="center">
+                                    <center>
+                                        <p>
+                                            <input Type="Button" Value=" b "
+                                                onclick="resbien(); this.style.color='red'">
+                                            <input Type="Button" Value=" v "
+                                                onclick="resmal(); alert('abrir, advertir, afirmativo, amable, cueva, \n \nsubir, obstruir, atrever, avión, bandido.')">
+                                            <input Type="Button" Value=" w "
+                                                onclick="resmal(); alert('abrir, advertir, afirmativo, amable, cueva, \n \nsubir, obstruir, atrever, avión, bandido.')">
+                            </b></td>
+                    </tr>
+                    <tr align="center">
+                        <td width="182" bgcolor="#FFFFFF">
+                            <div align="center">
+                                <center>
+                                    <p><small>
+                                            <font face="Verdana" color="#FF0000"><b>ad_ertir</b></font>
+                                        </small>
+                        </td>
+                        <b>
+                            <td width="152" align="center" bgcolor="#FFFFFF"><b><input Type="Button" Value=" b "
+                                        onclick="resmal(); alert('abrir, advertir, afirmativo, amable, cueva, \n \nsubir, obstruir, atrever, avión, bandido. ')">
+                                    <input Type="Button" Value=" v " onClick="resbien(); this.style.color='red'"> <input
+                                        Type="Button" Value=" w "
+                                        onClick="resmal(); alert('abrir, advertir, afirmativo, amable, cueva, \n \nsubir, obstruir, atrever, avión, bandido.')">
+                                </b>
+                        </b></td>
+                    </tr>
+                    <tr align="center">
+                        <td width="182" bgcolor="#FFFFFF">
+                            <div align="center">
+                                <center>
+                                    <p><small>
+                                            <font face="Verdana" color="#FF0000"><b>afirmati_o</b></font>
+                                        </small>
+                        </td>
+                        <b>
+                            <td width="152" align="center" bgcolor="#FFFFFF"><b><input Type="Button" Value=" b "
+                                        onclick="resmal(); alert('abrir, advertir, afirmativo, amable, cueva, \n \nsubir, obstruir, atrever, avión, bandido. ')">
+                                    <input Type="Button" Value=" v " onClick="resbien(); this.style.color='red'"> <input
+                                        Type="Button" Value=" w "
+                                        onClick="resmal(); alert('abrir, advertir, afirmativo, amable, cueva, \n \nsubir, obstruir, atrever, avión, bandido.')">
+                                </b>
+                        </b></td>
+                    </tr>
+                </table>
+            </center>
+        </div>
+        <div align="center">
+            <center>
+                <p><strong>
+                        <input Type="Button" value="Puntuación" onclick="averiguarNota()">
+                        <input TYPE="SUBMIT" VALUE="Borrar contestaciones" onblur="this.style.color='black'"> </p>
+            </center>
+        </div>
+    </form></strong>
+
+
+</body>
+
+</html>

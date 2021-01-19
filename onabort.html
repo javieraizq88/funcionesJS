@@ -1,0 +1,24 @@
+<html>
+
+<head>
+    <title>Evento onabort</title>
+
+    <script>
+        function preguntarSeguir() {
+            respuesta = confirm("Has detenido la carga de la página y hay una imagen que no estás viendo.n¿Deseas cargar la imagen?")
+            if (respuesta)
+                document.img1.src = "http://ipaginate.iespana.es/ipaginate/desarrollogrande.gif"
+        } 
+    </script>
+
+</head>
+
+<body>
+    <img name=img1 src="http://ipaginate.iespana.es/ipaginate/desarrollogrande.gif" width=500 height=458
+        alt="Imagen que pesa 115K" border="0" onabort="preguntarSeguir()">
+    <br>
+    Pulsa el botón de parar la carga de la página y se pondrá en marcha el evento onerror
+    <!-- Este ejemplo estaría bien si siempre se detuviese la carga por pulsar el botón de cancelar, pero si lo que pasa es que el usuario ha cancelado por irse a otra página a través de un enlace, saldrá la caja de confirmación pero no ocurrirá nada independientemente de lo que se responda y el navegante se marchará irremediablemente a la nueva página. -->
+</body>
+
+</html>

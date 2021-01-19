@@ -1,0 +1,121 @@
+<html>
+
+<head>
+    <title>Link con estilos dinámico</title>
+    <script language="Javascript">
+
+        // *******
+        // Saber si el string contiene caracteres numéricos
+
+        // Esta función recibe un string y devuelve 1 si se encuentran caracteres numéricos y 0 si no se encuentran.
+        var numeros = "0123456789";
+
+        function tiene_numeros(texto) {
+            for (i = 0; i < texto.length; i++) {
+                if (numeros.indexOf(texto.charAt(i), 0) != -1) {
+                    return "la contraseña tiene numeros";
+                }
+            }
+            return "la contraseña debe tener numeros, vuelve a intentarlo";
+        }
+        // Hemos creado primero una variable global con los números posibles, del 0 al 9, que queremos buscar. Esa variable la utilizaremos dentro de la función.
+        // La función hace un recorrido a todos los caracteres del string. Para cada uno se comprueba si está o no dentro de la variable numeros, creada con anterioridad.
+        // Si estaba, se devuelve 1 (como se ejecuta el return, se sale de la función devolviendo el valor 1).
+        // Si no estaba, entonces se hará el recorrido del string, carácter a carácter, hasta el final. Entonces se termina el bucle y se devuelve 0.
+        // Esta función se puede probar con estas sentencias:
+
+        alert(tiene_numeros("ASAS1"));
+        alert(tiene_numeros("2asasasas"));
+        alert(tiene_numeros("asas2sG"));
+        alert(tiene_numeros("a...."));
+        alert(tiene_numeros("A22323G2.12"));
+        // *******
+
+        // *******
+        // Saber si un string contiene letras
+
+        // Veamos una función muy similar, para saber si un string contiene un carácter que sea letra, valiendo tanto las mayúsculas como minúsculas.
+
+        var letras = "abcdefghyjklmnñopqrstuvwxyz";
+
+        function tiene_letras(texto) {
+            texto = texto.toLowerCase();
+            for (i = 0; i < texto.length; i++) {
+                if (letras.indexOf(texto.charAt(i), 0) != -1) {
+                    return "la contraseña tiene letras";
+                }
+            }
+            return "la contraseña debe tener letras, vuelve a intentarlo";
+        }
+        // El algoritmo es prácticamente el mismo que la función anterior. Primero hemos creado un string con todas las letras del alfabeto. Luego hacemos un recorrido buscando en cada uno de los caracteres del string recibido por parámetro una de las letras del alfabeto.
+        // La única particularidad es la llamada al método toLowerCase(), para convertir el texto que se recibe por parámetro a minúsculas y así que la búsqueda de letras no tenga en cuenta si son minúsculas o mayúsculas (ya que sólo buscamos si el string contiene letras).
+        // Podemos probar el string con estas líneas de código:
+
+        alert(tiene_letras("1"));
+        alert(tiene_letras("22323232s"));
+        alert(tiene_letras("22323232sf"));
+        alert(tiene_letras("a2232323"));
+        alert(tiene_letras("A22323G2.12"));
+        // *******
+
+        // *******
+        // Saber si un string tiene letras minúsculas
+        // Aquí vemos la función para comprobar si un string tiene caracteres en minúsculas. Es muy parecida a las que hemos visto anteriormente.
+
+        var letras = "abcdefghyjklmnñopqrstuvwxyz";
+
+        function tiene_letras(texto) {
+            texto = texto.toLowerCase();
+            for (i = 0; i < texto.length; i++) {
+                if (letras.indexOf(texto.charAt(i), 0) != -1) {
+                    return "la contraseña tiene letras minúsculas";
+                }
+            }
+            return "la contraseña debe tener letras minúsculas, vuelve a intentarlo";
+        }
+        // *******
+
+        // *******
+        // Comprobar si un string tiene letras mayúsculas
+        // Ahora veremos la función para ver si un string tiene letras mayúsculas. Es igual que la anterior, simplemente que tenemos una cadena con todas las letras en mayúscula para buscar en el texto recibido por parámetro.
+        
+        var letras = "abcdefghyjklmnñopqrstuvwxyz";
+
+        function tiene_minusculas(texto) {
+            for (i = 0; i < texto.length; i++) {
+                if (letras.indexOf(texto.charAt(i), 0) != -1) {
+                    return 1;
+                }
+            }
+            return 0;
+        }
+
+
+        // Comprobar si un string tiene letras mayúsculas
+
+        var letras_mayusculas = "ABCDEFGHYJKLMNÑOPQRSTUVWXYZ";
+
+        function tiene_mayusculas(texto) {
+            for (i = 0; i < texto.length; i++) {
+                if (letras_mayusculas.indexOf(texto.charAt(i), 0) != -1) {
+                    return 1;
+                }
+            }
+            return 0;
+        }
+        // Estas podrían ser las pruebas para comprobar el funcionamiento.
+
+        alert(tiene_mayusculas("1"));
+        alert(tiene_mayusculas("22323232s"));
+        alert(tiene_mayusculas("22323232sG"));
+        alert(tiene_mayusculas("a2232323"));
+        alert(tiene_mayusculas("A22323G2.12"));
+    </script>
+</head>
+
+<body>
+
+
+</body>
+
+</html>

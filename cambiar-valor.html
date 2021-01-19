@@ -1,0 +1,40 @@
+<html>
+
+<head>
+    <title>Cambiar el valor por defecto</title>
+    <script>
+
+        // Se puede ver en funcionamiento en esta página.
+
+        // Métodos del objeto Text
+        // Se pueden invocar los siguientes métodos sobre los objetos tipo Text.
+
+        // blur()
+        // Retira el foco de la aplicación del campo de texto.
+
+        // focus()
+        // Pone el foco de la aplicación en el campo de texto.
+
+        // select()
+        // Selecciona el texto del campo.
+
+        function seleccionaFoco(){ 
+   	document.miFormulario.campo1.focus() 
+   	document.miFormulario.campo1.select() 
+}
+// Los campos hidden son como campos de texto que están ocultos para el usuario, es decir, que no se ven en la página
+document.miFormulario.CampoHidden.value = "nuevo texto"
+    </script>
+</head>
+
+<body>
+    <form name="miFormulario" action="mailto:promocion@guiarte.com" enctype="text/plain">
+        <input type="Text" name="campo1" value="" size="12">
+        <input type="Reset">
+        <br>
+        <br>
+        <input type="button" value="Cambia valor por defecto" onclick="cambiaDefecto()">
+    </form>
+</body>
+
+</html>

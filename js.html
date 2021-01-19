@@ -1,0 +1,39 @@
+<html>
+
+<head>
+    <title>Untitled</title>
+
+    <script language="javascript">
+        var capa
+        ns4 = (document.layers) ? true : false
+        ie4 = (document.all) ? true : false
+
+        function init() {
+            if (ns4) {
+                capa = document.menu
+            }
+            if (ie4) {
+                capa = menu.style
+            }
+        }
+
+        function muestra(obj) {
+            if (ns4) obj.visibility = "show"
+            else if (ie4) obj.visibility = "visible"
+        }
+
+        function oculta(obj) {
+            if (ns4) obj.visibility = "hide"
+            else if (ie4) obj.visibility = "hidden"
+        }
+
+    </script>
+</head>
+
+<body onLoad="init()">
+    <div id="menu" style="position:Absolute;left:50; top:60; background-color:#ff1133; visibility:hidden">hola</div>
+    <div id="CapaNormal" style="position:absolute;left:50; top:150;background-color:pink;"><a href="#"
+            OnMouseOver="muestra(capa)" OnMouseOut="oculta(capa)">Ponte encima</a>...</div>
+</body>
+
+</html>
