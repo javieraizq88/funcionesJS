@@ -82,11 +82,11 @@
     <!-- Este ejemplo sigue la guía del primer ejemplo de onblur de este artículo, incluyendo un nuevo campo a validar. -->
 
     <!-- Para solucionar el tema del bucle infinito, que habréis podido investigar por vosotros mismos y en el que se mostraban una caja de alerta tras otra indefinidamente, hemos utilizado una variable llamada avisado que contiene un true si ya se ha avisado de que el campo estaba mal y un false si no se ha avisado todavía. -->
-    
+
     <!-- Cuando se va a mostrar la caja de alerta se comprueba si se ha avisado o no al usuario. Si ya se avisó no se hace nada, evitando que se muestren más cajas de alerta. Si no se había avisado todavía se muestra la caja de alerta y se coloca el foco en el campo que era incorrecto. -->
-    
+
     <!-- Para restituir la variable avisado a false, de modo que la próxima vez que se escriba mal el valor se muestre el mensaje correspondiente, se utiliza el método setTimeout, que ejecuta la instrucción con un retardo, en este caso de 50 milisegundos. Lo suficiente para que no se meta en un bucle infinito. -->
-    
+
     <!-- Nota: Después de todos los parches que hemos tenido que colocar para que este evento se comporte correctamente para cumplir el cometido deseado, es posible que no merezca la pena utilizarlo para este cometido. Podemos hacer uso del evento onchange, o comprobar todos los campos de una sola vez cuando el usuario ha decidido enviarlo. -->
 </body>
 

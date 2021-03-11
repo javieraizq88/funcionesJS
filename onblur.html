@@ -30,8 +30,8 @@
                 document.f1.numero.focus()
             } else
                 document.f1.numero.value = enteroValidado
-        } 
-        
+        }
+
     </script>
 </head>
 
@@ -40,9 +40,13 @@
         Escriba un número entero: <input type=text name=numero size=8 value="" onblur="compruebaValidoEntero()">
     </form>
 
-    <p>Al salirse del campo de texto (onblur) se ejecuta compruebaValidoEntero(), que utiliza la función validarEntero, explicada en un taller de Javascript. Si el valor devuelto por la función no es el de un entero, en este caso se recibiría una cadena vacía, muestra un mensaje en una caja alert, selecciona el texto escrito en la caja y coloca el foco de la aplicación en la caja de texto, para que el usuario coloque otro valor.</p>
-<br>
-    <p>Hasta que el visitante no escriba un número entero en el campo de texto el foco de la aplicación permanecerá en el campo y continuará recibiendo mensajes de error.</p>
+    <p>Al salirse del campo de texto (onblur) se ejecuta compruebaValidoEntero(), que utiliza la función validarEntero,
+        explicada en un taller de Javascript. Si el valor devuelto por la función no es el de un entero, en este caso se
+        recibiría una cadena vacía, muestra un mensaje en una caja alert, selecciona el texto escrito en la caja y
+        coloca el foco de la aplicación en la caja de texto, para que el usuario coloque otro valor.</p>
+    <br>
+    <p>Hasta que el visitante no escriba un número entero en el campo de texto el foco de la aplicación permanecerá en
+        el campo y continuará recibiendo mensajes de error.</p>
 </body>
 
 </html>

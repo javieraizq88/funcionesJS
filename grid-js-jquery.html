@@ -2,117 +2,115 @@
 <html lang="en">
 
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Comentarios</title>
-    <link rel="stylesheet" type="text/css" href="styles/kendo.common.min.css">
-<link rel="stylesheet" type="text/css" href="styles/kendo.default.min.css">
-<script type="text/javascript" src="js/jquery.min.js"></script>
-<script type="text/javascript" src="js/kendo.web.min.js"></script>
-<script>
-    $("#grid").kendoGrid();
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+   <title>Comentarios</title>
+   <link rel="stylesheet" type="text/css" href="styles/kendo.common.min.css">
+   <link rel="stylesheet" type="text/css" href="styles/kendo.default.min.css">
+   <script type="text/javascript" src="js/jquery.min.js"></script>
+   <script type="text/javascript" src="js/kendo.web.min.js"></script>
 
-    $("#grid").kendoGrid({
-    groupable: true,
-    scrollable: true,
-    sortable: true
-});
+   <script>
+      $("#grid").kendoGrid();
 
-function dameArray(){
-   return [
-   {
-      nombre: "miguel",
-      edad: 37
-   },
-   {
-      nombre: "Juan",
-      edad: 27
-   },
-   {
-      nombre: "Lola",
-      edad: 52
-   },
-   {
-      nombre: "Luis",
-      edad: 18
-   }
-   ];
-}
+      $("#grid").kendoGrid({
+         groupable: true,
+         scrollable: true,
+         sortable: true
+      });
 
-
-$("#otro").kendoGrid({
-   sortable: true,
-   pageable: {
-      pageSizes: 5
-   },
-   dataSource:{
-      data: dameArray(),
-      schema: {
-         model: {
-            fields:{
-               nombre: {type: "string"},
-               edad: {type: "number"}
+      function dameArray() {
+         return [
+            {
+               nombre: "miguel",
+               edad: 37
+            },
+            {
+               nombre: "Juan",
+               edad: 27
+            },
+            {
+               nombre: "Lola",
+               edad: 52
+            },
+            {
+               nombre: "Luis",
+               edad: 18
             }
-         }
-      },
-      pageSize: 5
-   },
-   columns: [
-      {
-         field: "nombre",
-         title: "Nombre Cliente",
-         width: "200px"
-      },
-      {
-         field: "edad",
-         title: "Edad",
-         width: "40px"
+         ];
       }
-   ]
-});
 
+      $("#otro").kendoGrid({
+         sortable: true,
+         pageable: {
+            pageSizes: 5
+         },
+         dataSource: {
+            data: dameArray(),
+            schema: {
+               model: {
+                  fields: {
+                     nombre: { type: "string" },
+                     edad: { type: "number" }
+                  }
+               }
+            },
+            pageSize: 5
+         },
+         columns: [
+            {
+               field: "nombre",
+               title: "Nombre Cliente",
+               width: "200px"
+            },
+            {
+               field: "edad",
+               title: "Edad",
+               width: "40px"
+            }
+         ]
+      });
 
-</script>
-
+   </script>
 
 <body>
-    <table id="grid">
-        <thead>
-        <tr>
-           <th data-field="nombre">Nombre</th>
-           <th data-field="distancia">Distancia del sol (1000 Km)</th>
-           <th data-field="superficie">Superficie (1000 Km2)</th>
-           <th data-field="satelites">Satélites</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-           <td>La tierra</td>
-           <td>1200</td>
-           <td>54</td>
-           <td>1</td>
-        </tr>
-        <tr>
-           <td>Mercurio</td>
-           <td>560</td>
-           <td>28</td>
-           <td>0</td>
-        </tr>
-        <tr>
-           <td>Venus</td>
-           <td>889</td>
-           <td>49</td>
-           <td>2</td>
-        </tr>
-        <tr>
-           <td>Júpiter</td>
-           <td>8002</td>
-           <td>509</td>
-           <td>4</td>
-        </tr>
-     </tbody>
-     </table>
-     
-     <div id="otro"></div>
+   <table id="grid">
+      <thead>
+         <tr>
+            <th data-field="nombre">Nombre</th>
+            <th data-field="distancia">Distancia del sol (1000 Km)</th>
+            <th data-field="superficie">Superficie (1000 Km2)</th>
+            <th data-field="satelites">Satélites</th>
+         </tr>
+      </thead>
+      <tbody>
+         <tr>
+            <td>La tierra</td>
+            <td>1200</td>
+            <td>54</td>
+            <td>1</td>
+         </tr>
+         <tr>
+            <td>Mercurio</td>
+            <td>560</td>
+            <td>28</td>
+            <td>0</td>
+         </tr>
+         <tr>
+            <td>Venus</td>
+            <td>889</td>
+            <td>49</td>
+            <td>2</td>
+         </tr>
+         <tr>
+            <td>Júpiter</td>
+            <td>8002</td>
+            <td>509</td>
+            <td>4</td>
+         </tr>
+      </tbody>
+   </table>
+
+   <div id="otro"></div>
 
 
 </body>

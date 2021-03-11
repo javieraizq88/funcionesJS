@@ -1,23 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
         // no hay botón de submit, sino un botón normal con una llamada a una función que podemos ver a continuación.
-function validaSubmite(){ 
-   	if (document.miFormulario.campo1.value == "") 
-      	alert("Debe rellenar el formulario") 
-   	else 
-      	document.miFormulario.submit() 
-}
+        function validaSubmite() {
+            if (document.miFormulario.campo1.value == "")
+                alert("Debe rellenar el formulario")
+            else
+                document.miFormulario.submit()
+        }
     </script>
 </head>
+
 <body>
-    <form name="miFormulario" action="mailto:promocion@guiarte.com" enctype="text/plain"> 
-        <input type="Text" name="campo1" value="" size="12"> 
-        <input type="button" value="Enviar" onclick="validaSubmite()"> 
-        </form>
+    <form name="miFormulario" action="mailto:promocion@guiarte.com" enctype="text/plain">
+        <input type="Text" name="campo1" value="" size="12">
+        <input type="button" value="Enviar" onclick="validaSubmite()">
+    </form>
 </body>
+
 </html>
